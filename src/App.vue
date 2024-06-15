@@ -46,6 +46,14 @@ export default {
 
           <div class='card'>
 
+            <div v-if="photo.upload_image">
+              <img class="card-img-top" :src="photo.upload_image.startsWith('https://') ? photo.upload_image : base_api_url + '/storage/' + photo.upload_image" alt="">
+            </div>
+
+            <div v-else>
+              <img src="https://picsum.photos/400/200" alt="">
+            </div>
+
             <div class='card-body'>
               
               {{ photo.title }}
