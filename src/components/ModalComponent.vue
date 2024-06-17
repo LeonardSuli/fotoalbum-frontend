@@ -25,17 +25,17 @@ export default{
 
                         <div class="card pointer">
 
-                        <div v-if="photo.upload_image">
-                            <img class="card-img-top" :src="photo.upload_image.startsWith('https://') ? photo.upload_image : state.base_api_url + '/storage/' + photo.upload_image" alt=""/>
-                        </div>
+                            <div v-if="photo.upload_image">
+                                <img class="card-img-top photo" :src="photo.upload_image.startsWith('https://') ? photo.upload_image : state.base_api_url + '/storage/' + photo.upload_image" alt=""/>
+                            </div>
 
-                        <div v-else>
-                            <img width='100%' src="https://picsum.photos/400/200" alt="" />
-                        </div>
+                            <div v-else>
+                                <img class="card-img-top photo" width='100%' src="https://picsum.photos/400/200" alt="" />
+                            </div>
 
-                        <div class="card-body">
-                            {{ photo.title }}
-                        </div>
+                            <div class="card-body">
+                                {{ photo.title }}
+                            </div>
 
                         </div>
 
@@ -71,7 +71,15 @@ export default{
                             </div>
 
                             <div class='col-4 ps-3'>
-                            
+
+                                <div class='mb-3'>
+                                    <strong>Title: </strong> {{ photo.title}}
+                                </div>
+
+                                <div class='mb-3' v-if="photo.category">
+                                    <strong>Category: </strong> {{ photo.category.name }}
+                                </div>
+                                
                                 {{ photo.description }}
                                 
                             </div>
@@ -97,5 +105,9 @@ export default{
 
 
 <style scoped>
+
+.card:hover{
+    transform: scale(1.05);
+}
 
 </style>

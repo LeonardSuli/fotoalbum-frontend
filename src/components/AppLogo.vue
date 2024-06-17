@@ -7,7 +7,7 @@ export default{
 
 <template >
 
-    <div class='d-flex justify-content-center'>
+    <div class='d-flex justify-content-center mb-4'>
     
         <img  src="/logo.png" alt="Logo Photo Album">
 

@@ -33,29 +33,29 @@ export default{
 <template>
 
     <header>
-  <div class="p-5 mb-4 bg-light rounded-3">
-    <div class="container py-2">
+      <div class="p-5  bg-light rounded-3">
+        <div class="container py-2">
 
-      <AppLogo></AppLogo>
-    
-      <p class="col-md-8 fs-4">See our amazing album</p>
+          <AppLogo></AppLogo>
+        
+          <p class="col-md-8 fs-4">See our amazing PhotoAlbum</p>
 
-      <form @submit.prevent="state.search()">
+          <form @submit.prevent="state.search()">
 
-        <div class="input-group mb-3">
+            <div class="input-group mb-3">
 
-          <input type="search" class="form-control" placeholder="Search..." v-model="state.search_text"/>
+              <input type="search" class="form-control" placeholder="Search..." v-model="state.search_text"/>
 
-          <button class="btn btn-outline-secondary" type="submit">
-            Search
-          </button>
+              <button class="btn btn-outline-secondary" type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+
+            </div>
+
+          </form>
 
         </div>
-
-      </form>
-
-    </div>
-  </div>
+      </div>
     </header>
 
 </template>
