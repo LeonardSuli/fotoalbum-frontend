@@ -23,13 +23,13 @@ export default{
             <nav aria-label="Page navigation" class="mt-4">
                 <ul class="pagination">
 
-                <li class="page-item" :class="{ disabled: !link.url, active: link.active }" v-for="link in state.photos.links">
+                    <li class="page-item" :class="{ disabled: !link.url, active: link.active }" v-for="link in state.photos.links">
 
-                    <button class="page-link"  type="button" @click="state.goTo(link.url)">
-                        <span v-html="link.label"></span>
-                    </button>
-                    
-                </li>
+                        <button class="page-link"  type="button" @click="state.goTo(link.url)">
+                            <span v-html="link.label"></span>
+                        </button>
+                        
+                    </li>
 
                 </ul>
             </nav>

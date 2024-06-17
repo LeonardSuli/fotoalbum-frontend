@@ -53,21 +53,32 @@ export default{
 
             <div v-else>
 
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4" >
+                <div v-if="state.photos.data.length > 0">
+                    
+                    <!-- Photos to show -->
+                    <div class="results">Risultati trovati: {{ state.photos.data.length }}</div>
 
-                    <!-- Modal -->
-                    <ModalComponent></ModalComponent>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4" >
 
+                        <!-- Modal -->
+                        <ModalComponent></ModalComponent>
+                    
+                    </div>
+
+                </div>    
                 
-                </div>
+                <!-- No Photos -->
+                <div class="no_results" v-else>
+                    No Photos to show
+                </div>    
 
-                <!-- Pagination -->
-                <PaginationComponent></PaginationComponent>
+                    <!-- Pagination -->
+                    <PaginationComponent></PaginationComponent>
 
             </div> 
 
         </div>
-        
+
     </section>
 
 </main>
@@ -77,5 +88,19 @@ export default{
 
 <style scoped>
 
+.results{
+    font-size: 26px;
+    font-weight: 700;
+    color: green;
+    margin-bottom: 2rem;
+}
 
+.no_results{
+    font-size: 26px;
+    font-weight: 700;
+    color: red;
+    display:flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
 </style>

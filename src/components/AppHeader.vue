@@ -40,6 +40,7 @@ export default{
         
           <p class="col-md-8 fs-4">See our amazing PhotoAlbum</p>
 
+          <!-- Form -->
           <form @submit.prevent="state.search()">
 
             <div class="input-group mb-3">
